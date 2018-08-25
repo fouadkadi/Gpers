@@ -1,0 +1,99 @@
+﻿<Window x:Class="Authentification.fiche_ent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+
+        Title="fiche_ent"  Height="700" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0,0,-3,0">
+        <Grid.Resources>
+            <Style
+          TargetType="CheckBox"
+          BasedOn="{StaticResource MaterialDesignCheckBox}">
+                <Setter
+            Property="Margin"
+            Value="8,8,10,8" />
+            </Style>
+            <Style
+          TargetType="TextBox"
+          BasedOn="{StaticResource MaterialDesignTextBox}">
+                <Setter
+            Property="materialDesign:HintAssist.IsFloating"
+            Value="True" />
+                <Setter
+            Property="Margin"
+            Value="8,8,8,8" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+          Width="*" />
+            <ColumnDefinition
+          Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+          Height="auto" />
+            <RowDefinition
+          Height="auto" />
+            <RowDefinition
+          Height="auto" />
+            <RowDefinition
+          Height="auto" />
+            <RowDefinition
+          Height="auto" />
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Mode="PrimaryLight" Padding="20" Margin="0,0,0,0">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Century Gothic" Margin="0,0,0,-10">Fiche d'entretien</TextBlock>
+            </StackPanel>
+        </materialDesign:ColorZone>
+        <ScrollViewer Margin="0,60,0,0" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+
+            <StackPanel x:Name="stackpanel"  Height="670"  Width="500" ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="0,0,0,0"  >
+
+
+
+                <Label x:Name="matri_label" Content="matricule" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Century Gothic" RenderTransformOrigin="0.401,1.731" Foreground="#89443C3C" Margin="0,10,0,0" />
+                <DatePicker x:Name="date_et"  Text="see" BorderThickness="0,0,0,3" Background="{x:Null}" materialDesign:HintAssist.Hint="Date de l'entretien" BorderBrush="#89443C3C" Width="490" Margin="0,20,0,0" FontSize="14"/>
+
+                <TextBox x:Name="expe"  VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Experiance" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="Q1"   VerticalAlignment="Top"   materialDesign:HintAssist.Hint="Question 1" PreviewTextInput="textvalid" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="evQ1"   VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Evaluation Question 1"  PreviewTextInput="NumberValidationTextBox" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="Q2"  VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Question 2"  PreviewTextInput="textvalid" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="evQ2"    VerticalAlignment="Top" materialDesign:HintAssist.Hint="Evaluation Question 2"  PreviewTextInput="NumberValidationTextBox" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="Salaire"   VerticalAlignment="Top" TextWrapping="Wrap"  materialDesign:HintAssist.Hint="Salair" PreviewTextInput="NumberValidationTextBox" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="statu"  TextWrapping="Wrap" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Status" PreviewTextInput="textvalid" BorderBrush="#89443C3C" FontSize="14"/>
+                <TextBox x:Name="etape"  TextWrapping="Wrap" VerticalAlignment="Top"  PreviewTextInput="textvalid" materialDesign:HintAssist.Hint="Etape Suivante"  BorderBrush="#89443C3C" FontSize="14"/>
+
+
+                <TextBox x:Name="comnt" VerticalAlignment="Top"  Cursor="Hand" Width="483"  materialDesign:HintAssist.Hint="Commentaire" BorderBrush="#89443C3C" Margin="0,5,0,0" FontSize="14"/>
+                <Button x:Name="inscrire" Height="35" Width="120" Margin="0,15,0,0" HorizontalAlignment="Center"  Background="Green" Foreground="White"  Click="validation">
+                    <StackPanel Height="35" Width="120">
+                        <Label Content="Inscrire" Margin="35,0,0,0" />
+                        <materialDesign:PackIcon Kind="Check" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,-30,0,0" ></materialDesign:PackIcon>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+        </ScrollViewer>
+        <Button   Height="40" Width="40" HorizontalAlignment="Right" Margin="0,15,10,0" VerticalAlignment="Top" BorderThickness="0" materialDesign:ShadowAssist.ShadowDepth="Depth0" Background="Transparent" Click="Button_Click">
+            <materialDesign:PackIcon Kind="Close" Height="30" Width="40"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <materialDesign:DialogHost x:Name="alert" IsOpen="False" >
+            <materialDesign:DialogHost.DialogContent>
+
+                <StackPanel Margin="15">
+                    <TextBlock x:Name="alert_text" Text=" Bien conneceté " Margin="10"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"  Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " Background="#FF2ECC71"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+
+        </materialDesign:DialogHost>
+    </Grid>
+</Window>

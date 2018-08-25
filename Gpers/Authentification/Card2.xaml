@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Authentification.Card2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             Height="170" Width="270">
+    <Grid>
+        <materialDesign:Card Margin="0,0,0,0" Height="170" Width="270" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+            <Grid>
+
+                <TextBlock x:Name="matricule" Margin="123,27,37,126" RenderTransformOrigin="0.888,-0.154"/>
+                <TextBlock x:Name="nom" Margin="123,49,37,105" />
+                <TextBlock x:Name="prenom" Margin="123,70,37,83"/>
+                <TextBlock x:Name="adrmail" Margin="123,92,37,61" />
+                <TextBlock x:Name="Poste" Margin="123,114,37,40" />
+                <TextBlock x:Name="Projet" Margin="123,135,37,19" />
+                <materialDesign:PackIcon Kind="Email" Margin="66,93,0,0" Height="17" Width="26"></materialDesign:PackIcon>
+
+                <materialDesign:PackIcon Kind="Accountbox" Height="71" Width="90" Margin="-12,7,0,0"/>
+                <Menu Cursor="Hand" IsMainMenu="True" Margin="230,3,3,133"  RenderTransformOrigin="0.486,0.618">
+                    <MenuItem Cursor="Hand" Height="34" Width="37" Background="LightBlue">
+
+                        <MenuItem x:Name="edition" Header="Editer une fiche d'évaluation " Click="edition_Click" FontSize="12" Cursor="Hand" Width="270"></MenuItem>
+
+                        <MenuItem x:Name="visualiser" Header="Visualiser les fiches d'évaluation" FontSize="12" Cursor="Hand" Width="270" Click="visualiser_Click"></MenuItem>
+
+                        <MenuItem x:Name="compte_rendu" Click="compte_rendu_Click" Header="Compte rendu de la dernière évaluation" FontSize="12" Cursor="Hand" Width="270"></MenuItem>
+                    </MenuItem>
+                </Menu>
+                <materialDesign:PackIcon  Kind="DotsVertical" Height="25" Width="33" VerticalAlignment="Top" RenderTransformOrigin="0.519,-0.375" HorizontalAlignment="Right" Margin="0,7,5,0"  />
+                <TextBlock Text="ID    " Height="20" FontSize="10" FontWeight="Black" Padding="1,1,1,1" Margin="68,26,175,124" RenderTransformOrigin="0.05,0.6"/>
+                <TextBlock Text="Nom " Height="20" FontSize="10" FontWeight="Black" Padding="17,1,1,1" Margin="52,49,172,101" RenderTransformOrigin="0.05,0.6"/>
+                <TextBlock Text="Prenom " Height="20" FontSize="10" FontWeight="Black" Padding="0,1,1,1" Margin="70,70,154,80" RenderTransformOrigin="0.05,0.6"/>
+                <TextBlock Text="Poste " Height="20" FontSize="10" FontWeight="Black" Padding="0,1,1,1" Margin="71,114,160,36" RenderTransformOrigin="0.05,0.6"/>
+                <TextBlock Text="Projet " Height="20" FontSize="10" FontWeight="Black" Padding="0,1,1,1" Margin="71,136,148,14" RenderTransformOrigin="0.05,0.6"/>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

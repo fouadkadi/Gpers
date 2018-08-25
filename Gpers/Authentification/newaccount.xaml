@@ -1,0 +1,58 @@
+﻿<Window x:Class="Authentification.newaccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        
+       Title="Nouveau compte" Height="360" Width="491" WindowStartupLocation="CenterScreen" Icon="img/iconmini.png">
+    <Grid >
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Margin="0 10 0 10" FontSize="35" FontFamily="Roboto Light"> Nouveau compte</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                    <materialDesign:PackIcon Kind="Account"  Foreground="{Binding ElementName=user , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                    <TextBox x:Name="user" Width="300" materialDesign:HintAssist.Hint="utilisateur" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="60 10">
+                    <materialDesign:PackIcon Kind="key" Foreground="{Binding ElementName=user , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                    <PasswordBox x:Name="passwordBox" Width="300"  materialDesign:HintAssist.Hint="mot de passe" materialDesign:HintAssist.IsFloating="True"  BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto" />
+                </StackPanel>
+                <ComboBox x:Name="comboBox" Margin="110 0 0 0"  Style="{StaticResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Left" Width="150" materialDesign:HintAssist.Hint="Profil" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" >
+                    <ComboBoxItem>ADMIN</ComboBoxItem>
+                    <ComboBoxItem>ADMIN-GESTIONNAIRE</ComboBoxItem>
+                    <ComboBoxItem>GESTIONNAIRE</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>    
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button x:Name="Ajout" Content="Ajouter" HorizontalAlignment="Center" Height="28"  VerticalAlignment="Center" Width="103" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Click="Ajout_Click"/>
+
+        </Grid>
+        <materialDesign:DialogHost x:Name="alert" IsOpen="False" Grid.RowSpan="3">
+            <materialDesign:DialogHost.DialogContent>
+
+                <StackPanel Margin="15">
+                    <TextBlock x:Name="alert_text" Text=" Bien conneceté " Margin="10"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"  Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " Background="#FF2ECC71"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+
+        </materialDesign:DialogHost>
+    </Grid>
+</Window>

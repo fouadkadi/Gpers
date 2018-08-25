@@ -1,0 +1,184 @@
+﻿<Window x:Class="Authentification.infoentreprise"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             mc:Ignorable="d" 
+             WindowStyle="None"
+             WindowStartupLocation="CenterScreen"
+             ResizeMode="NoResize"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             Height="500" Width="400" Icon="img/iconmini.png">
+    <Grid Background="White" Height="auto" Width="auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <materialDesign:ColorZone Mode="PrimaryDark">
+                <StackPanel HorizontalAlignment="Right"  materialDesign:ShadowAssist.ShadowEdges="Bottom" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+                    <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                        <materialDesign:PackIcon Kind="WindowClose"/>
+                    </Button>
+
+                </StackPanel>
+            </materialDesign:ColorZone>
+            <materialDesign:ColorZone Mode="PrimaryDark" >
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" materialDesign:ShadowAssist.ShadowEdges="Bottom" materialDesign:ShadowAssist.ShadowDepth="Depth4" RenderTransformOrigin="-2.267,0.4">
+                    <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click_1" Margin="0,0,10,0">
+                        <materialDesign:PackIcon Kind="WindowMinimize" Padding="0,0,10,0"/>
+                    </Button>
+                    <Button Width="30"  Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="Button_Click">
+                        <materialDesign:PackIcon Kind="WindowClose"/>
+                    </Button>
+
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+        <dragablz:TabablzControl BorderBrush="#FF1495D1" Width="400" Height="400" BorderThickness="1,1,1,0">
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="Coordonées">
+                <StackPanel Margin="0 15 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Home"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Adresse" Width="200" materialDesign:HintAssist.Hint="Adresse" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Phone"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Telephone" PreviewTextInput="NumberValidationTextBox" Width="200" materialDesign:HintAssist.Hint="Téléphone" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Fax"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Fax" PreviewTextInput="NumberValidationTextBox" Width="200" materialDesign:HintAssist.Hint="Fax" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Web"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Site_web" Width="200" materialDesign:HintAssist.Hint="Site web" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Email"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Adresse_mail_gérant" Width="200" materialDesign:HintAssist.Hint="Adresse mail gérant" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                           
+                        <materialDesign:PackIcon Kind="Map"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                            <ComboBox x:Name="wilaya" Width="200" Style="{StaticResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Wilaya"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>1- Adrar</ComboBoxItem>
+                                <ComboBoxItem>2- Chlef</ComboBoxItem>
+                                <ComboBoxItem>3- Laghouat</ComboBoxItem>
+                                <ComboBoxItem>4- Oum El Bouaghi</ComboBoxItem>
+                                <ComboBoxItem>5- Batna</ComboBoxItem>
+                                <ComboBoxItem>6- Bejaia</ComboBoxItem>
+                                <ComboBoxItem>7- Biskra</ComboBoxItem>
+                                <ComboBoxItem>8- Bechar</ComboBoxItem>
+                                <ComboBoxItem>9- Blida</ComboBoxItem>
+                                <ComboBoxItem>10- Bouira</ComboBoxItem>
+                                <ComboBoxItem>11- Tamanrassat</ComboBoxItem>
+                                <ComboBoxItem>12- Tébessa</ComboBoxItem>
+                                <ComboBoxItem>13- Tlemcen</ComboBoxItem>
+                                <ComboBoxItem>14- Tiaret</ComboBoxItem>
+                                <ComboBoxItem>15- Tizi Ouzou</ComboBoxItem>
+                                <ComboBoxItem>16- Alger</ComboBoxItem>
+                                <ComboBoxItem>17- Djelfa</ComboBoxItem>
+                                <ComboBoxItem>18- Jijel</ComboBoxItem>
+                                <ComboBoxItem>19- Sétif</ComboBoxItem>
+                                <ComboBoxItem>20- Saida</ComboBoxItem>
+                                <ComboBoxItem>21- Skikda</ComboBoxItem>
+                                <ComboBoxItem>22- Sidi Bel Abbès</ComboBoxItem>
+                                <ComboBoxItem>23- Annaba</ComboBoxItem>
+                                <ComboBoxItem>24- Guelma</ComboBoxItem>
+                                <ComboBoxItem>25- Constantine</ComboBoxItem>
+                                <ComboBoxItem>26- Médéa</ComboBoxItem>
+                                <ComboBoxItem>27- Mostaganem</ComboBoxItem>
+                                <ComboBoxItem>28- M'Sila</ComboBoxItem>
+                                <ComboBoxItem>29- Mascara</ComboBoxItem>
+                                <ComboBoxItem>30- Ouargla</ComboBoxItem>
+                                <ComboBoxItem>31- Oran</ComboBoxItem>
+                                <ComboBoxItem>32- El Bayadh</ComboBoxItem>
+                                <ComboBoxItem>33- Illizi</ComboBoxItem>
+                                <ComboBoxItem>34- Bordj Bou Arreridj</ComboBoxItem>
+                                <ComboBoxItem>35- Boumerdès</ComboBoxItem>
+                                <ComboBoxItem>36- El Tarf</ComboBoxItem>
+                                <ComboBoxItem>37- Tindouf</ComboBoxItem>
+                                <ComboBoxItem>38- Tissemsilt</ComboBoxItem>
+                                <ComboBoxItem>39- El oued</ComboBoxItem>
+                                <ComboBoxItem>40- Khenchela</ComboBoxItem>
+                                <ComboBoxItem>41- Souk Ahras</ComboBoxItem>
+                                <ComboBoxItem>42- Tipaza</ComboBoxItem>
+                                <ComboBoxItem>43- Mila</ComboBoxItem>
+                                <ComboBoxItem>44- Ain Defla</ComboBoxItem>
+                                <ComboBoxItem>45- Naama</ComboBoxItem>
+                                <ComboBoxItem>46- Ain Témouchent</ComboBoxItem>
+                                <ComboBoxItem>47- Ghardaia</ComboBoxItem>
+                                <ComboBoxItem>48- Relizane</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+            </TabItem>
+            <TabItem Header="informations">
+                <StackPanel Margin="0 30 0 0">
+
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Contacts"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Raison_sociale" Width="200" materialDesign:HintAssist.Hint="Raison sociale" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Worker"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Spécialité" PreviewTextInput="textvalidationTextBox" Width="200" materialDesign:HintAssist.Hint="Spécialité" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="AccountBox"   Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Gérant" PreviewTextInput="textvalidationTextBox" Width="200" materialDesign:HintAssist.Hint="Gérant" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="FileAccount"  Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Numéro_RC" PreviewTextInput="NumberValidationTextBox" Width="200" materialDesign:HintAssist.Hint="Numéro RC" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="60 10 0 0" >
+                        <materialDesign:PackIcon Kind="Key"   Foreground="{Binding ElementName=Adresse , Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 0" Width="30" Height="30"/>
+                        <TextBox x:Name="Identifiant_fiscal" Width="200" materialDesign:HintAssist.Hint="Identifiant fiscal" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="16" FontFamily="Roboto"  />
+                    </StackPanel>
+                </StackPanel>
+
+               
+            </TabItem>
+            <TabItem Header="logo">
+                <StackPanel Orientation="Vertical">
+                    <Image x:Name="logo" Margin="0 60 0 0" Width="100" Height="100" Source="img/businessman.png" />
+                    <Button VerticalAlignment="Bottom" Margin="0 40 0 40" Click="logo_Click" Style="{DynamicResource MaterialDesignFloatingActionDarkButton}"  >
+                    <materialDesign:PackIcon Kind="Image" Width="30" Height="30" />
+                </Button>
+                </StackPanel>
+            </TabItem>
+        </dragablz:TabablzControl>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Border BorderThickness="1,0,1,1" BorderBrush="#FF1495D1" Padding="2">
+                <StackPanel>
+                <Button Content="Valider" Click="valid" Width="100" materialDesign:ShadowAssist.ShadowDepth="Depth2"></Button>
+            </StackPanel>
+            </Border>
+        </Grid>
+        <materialDesign:DialogHost x:Name="alert" IsOpen="False" Grid.RowSpan="3">
+            <materialDesign:DialogHost.DialogContent>
+
+                <StackPanel Margin="15">
+                    <TextBlock x:Name="alert_text" Text=" Bien conneceté " Margin="10"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"  Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " Background="#FF2ECC71"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+
+        </materialDesign:DialogHost>
+    </Grid>
+</Window>

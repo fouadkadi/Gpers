@@ -1,0 +1,104 @@
+﻿<Window x:Class="Authentification.modif_employée"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Width="998.779" Height="495.048" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="img/iconmini.png">
+
+    <Grid Background="White" Margin="0,0,0,-7" >
+
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                <materialDesign:ColorZone x:Name="colzone" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                    <StackPanel materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                        <TextBlock FontSize="35" HorizontalAlignment="Center" Margin="10">
+                            Modifier les informations d'un employé
+                        </TextBlock>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <StackPanel Margin=" 0 50 0 0">
+                    <ComboBox x:Name="choixemployée" Margin="20" materialDesign:HintAssist.Hint="Choix de l'employé" Width="200" materialDesign:HintAssist.IsFloating="True" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" BorderBrush="#89443C3C"   ></ComboBox>
+                    <Button Content="valider" Width="200" Click=" valid_Click" x:Name="button3"></Button>
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Row="1" x:Name="edit" Grid.Column="1" IsEnabled="False">
+                <ScrollViewer Margin="0,0,1,1" >
+
+                    <StackPanel Margin=" 0 0 0 0" ScrollViewer.HorizontalScrollBarVisibility="Visible" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" >
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="Nom" Margin="20 10 12 0" Width="300" MaxLength="40" materialDesign:HintAssist.Hint="Nom" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" BorderThickness="0,0,0,1" PreviewTextInput="textvalidationTextBox"></TextBox>
+                            <TextBox x:Name="Prenom" Margin="40 10 12 0" Width="300" MaxLength="40" materialDesign:HintAssist.Hint="Prenom" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox" ></TextBox>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left"  >
+
+                            <TextBox x:Name="Adresse" Margin="20 10 12 0"  HorizontalAlignment="Left" Width="600" materialDesign:HintAssist.Hint="Adresse" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Telephone" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" MaxLength="10" materialDesign:HintAssist.Hint="num" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="NumberValidationTextBox"/>
+                            <TextBox x:Name="Email" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="e-mail" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <DatePicker x:Name="Date_naissance" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date de naissance" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+
+                            <ComboBox x:Name="sex" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="100" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Sex"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Home</ComboBoxItem>
+                                <ComboBoxItem>Femme</ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:Name="Situationfamiliale" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Situation familiale"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Célibataire</ComboBoxItem>
+                                <ComboBoxItem>Marié</ComboBoxItem>
+                            </ComboBox>
+                            <TextBox x:Name="Poste_occupee" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Poste occupé" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox"/>
+                            <TextBox x:Name="Responsable_hiearchique" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Responsable hiérarchique" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox"/>
+                            <DatePicker x:Name="Date_embauche" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date d'embauche" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+
+                            <TextBox x:Name="Salaire" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Salaire" materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox"  BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Projet" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Projet" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" />
+                            <TextBox x:Name="numero_immatriculation_sociale" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Numéro d'immatriculation sociale" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <ComboBox x:Name="Statut" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Statut"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Actif</ComboBoxItem>
+                                <ComboBoxItem>Désactivé</ComboBoxItem>
+                                <ComboBoxItem>Retraite</ComboBoxItem>
+                            </ComboBox>
+                            <DatePicker x:Name="Date_demission" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date Démission" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="nbr_conge_restants" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Nombre de jours congés restants" MaxLength="3" materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox"  BorderBrush="#89443C3C" FontSize="14"/>
+
+                            <TextBox x:Name="Coordonnes_bancaires" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Coordonnées bancaires" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Commentaire" HorizontalAlignment="Left" Margin="20 10 12 20" Width="700" materialDesign:HintAssist.Hint="Commentaire" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+
+                        </StackPanel>
+                        <Button  HorizontalAlignment="Center"  materialDesign:ShadowAssist.ShadowEdges="All" materialDesign:ShadowAssist.ShadowDepth="Depth2" Click="Valider" Margin="0 20 0 40" Style="{DynamicResource MaterialDesignRaisedButton}" Content="Valider"  x:Name="button2"></Button>
+                    </StackPanel>
+
+
+                </ScrollViewer>
+            </Grid>
+            <materialDesign:DialogHost x:Name="alert" IsOpen="False" Grid.Row="1" Grid.ColumnSpan="2">
+                <materialDesign:DialogHost.DialogContent>
+
+                    <StackPanel Margin="15">
+                        <TextBlock x:Name="alert_text" Text="Formulaire erroné" Margin="10"/>
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " x:Name="button1"/>
+                    </StackPanel>
+                </materialDesign:DialogHost.DialogContent>
+
+            </materialDesign:DialogHost>
+        </Grid>
+
+    </Grid>
+
+</Window>

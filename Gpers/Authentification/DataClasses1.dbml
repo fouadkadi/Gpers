@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProjetBDD" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bin\Debug\ProjetBDD.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Authentification.Properties.Settings" SettingsPropertyName="ProjetBDDConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Auth" Member="Auth">
+    <Type Name="Auth">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[user]" Member="user" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="profil_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="profil_gest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="couleur" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="theme" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employee">
+    <Type Name="Employee">
+      <Column Name="matricule" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date_de_ness" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Num_tel" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Adr_mail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cor_bnc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="wilaya_naiss" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entretien" Member="Entretien">
+    <Type Name="Entretien">
+      <Column Name="matricule" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="exp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Q1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evaQ1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Q2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evaQ2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="salaire_des" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="statut" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="etape_suiv" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recrutement" Member="Recrutement">
+    <Type Name="Recrutement">
+      <Column Name="matricule" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom_dm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adr_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="int_post" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[date_ent ]" Member="date_ent_" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.info_entreprise" Member="info_entreprise">
+    <Type Name="info_entreprise">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Raison_so" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Spécialité" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="site_web" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Gérant" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Adr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Téléphone" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fax" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Adr_mail_g" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Numéro_RC" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="identifiant_fi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="wilaya" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.info_comp" Member="info_comp">
+    <Type Name="info_comp">
+      <Column Name="matricule" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="situ_fam" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date_emb" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="salaire" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NIS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="C_T" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CV" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="statut" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date_dem" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="poste" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="projet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Nbj_r_c" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="respo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.objectif" Member="objectif">
+    <Type Name="objectif">
+      <Column Name="matricule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="o" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="debut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="clé" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="eval" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Salaire" Member="Salaire">
+    <Type Name="Salaire">
+      <Column Name="matricule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ancien ]" Member="ancien_" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nouveau" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="date_modif" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.congé2" Member="congé2">
+    <Type Name="congé2">
+      <Column Name="matricule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="debut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nb_j_r" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="formulaire" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="clé" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

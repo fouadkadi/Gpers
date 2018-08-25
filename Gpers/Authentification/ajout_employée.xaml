@@ -1,0 +1,150 @@
+﻿<Window x:Class="Authentification.ajout_employée"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Width="998.779" Height="495.048" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="img/LogoBlue.png">
+
+    <Grid Background="White" Margin="0,0,0,-7" >
+
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <materialDesign:ColorZone x:Name="colzone" materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                    <StackPanel materialDesign:ShadowAssist.ShadowDepth="Depth3">
+                        <TextBlock FontSize="35" HorizontalAlignment="Center" Margin="10">
+                            Formulaire
+                        </TextBlock>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ScrollViewer Margin="0,0,1,1" >
+
+                    <StackPanel Margin=" 150 0 0 0" ScrollViewer.HorizontalScrollBarVisibility="Visible" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" >
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="Nom" Margin="20 10 12 0" Width="300" MaxLength="40" materialDesign:HintAssist.Hint="Nom" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" BorderThickness="0,0,0,1" PreviewTextInput="textvalidationTextBox"></TextBox>
+                            <TextBox x:Name="Prenom" Margin="40 10 12 0" Width="300" MaxLength="40" materialDesign:HintAssist.Hint="Prenom" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox" ></TextBox>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left"  >
+
+                            <TextBox x:Name="Adresse" Margin="20 10 12 0"  HorizontalAlignment="Left" Width="600" materialDesign:HintAssist.Hint="Adresse" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Telephone" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" MaxLength="10" materialDesign:HintAssist.Hint="num" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="NumberValidationTextBox"/>
+                            <TextBox x:Name="Email" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="e-mail" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <DatePicker x:Name="Date_naissance" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date de naissance" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                            <ComboBox x:Name="wilaya_nessance" Margin="20 15 12 0" Width="200" Style="{StaticResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Wilaya de nessance"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>1- Adrar</ComboBoxItem>
+                                <ComboBoxItem>2- Chlef</ComboBoxItem>
+                                <ComboBoxItem>3- Laghouat</ComboBoxItem>
+                                <ComboBoxItem>4- Oum El Bouaghi</ComboBoxItem>
+                                <ComboBoxItem>5- Batna</ComboBoxItem>
+                                <ComboBoxItem>6- Bejaia</ComboBoxItem>
+                                <ComboBoxItem>7- Biskra</ComboBoxItem>
+                                <ComboBoxItem>8- Bechar</ComboBoxItem>
+                                <ComboBoxItem>9- Blida</ComboBoxItem>
+                                <ComboBoxItem>10- Bouira</ComboBoxItem>
+                                <ComboBoxItem>11- Tamanrassat</ComboBoxItem>
+                                <ComboBoxItem>12- Tébessa</ComboBoxItem>
+                                <ComboBoxItem>13- Tlemcen</ComboBoxItem>
+                                <ComboBoxItem>14- Tiaret</ComboBoxItem>
+                                <ComboBoxItem>15- Tizi Ouzou</ComboBoxItem>
+                                <ComboBoxItem>16- Alger</ComboBoxItem>
+                                <ComboBoxItem>17- Djelfa</ComboBoxItem>
+                                <ComboBoxItem>18- Jijel</ComboBoxItem>
+                                <ComboBoxItem>19- Sétif</ComboBoxItem>
+                                <ComboBoxItem>20- Saida</ComboBoxItem>
+                                <ComboBoxItem>21- Skikda</ComboBoxItem>
+                                <ComboBoxItem>22- Sidi Bel Abbès</ComboBoxItem>
+                                <ComboBoxItem>23- Annaba</ComboBoxItem>
+                                <ComboBoxItem>24- Guelma</ComboBoxItem>
+                                <ComboBoxItem>25- Constantine</ComboBoxItem>
+                                <ComboBoxItem>26- Médéa</ComboBoxItem>
+                                <ComboBoxItem>27- Mostaganem</ComboBoxItem>
+                                <ComboBoxItem>28- M'Sila</ComboBoxItem>
+                                <ComboBoxItem>29- Mascara</ComboBoxItem>
+                                <ComboBoxItem>30- Ouargla</ComboBoxItem>
+                                <ComboBoxItem>31- Oran</ComboBoxItem>
+                                <ComboBoxItem>32- El Bayadh</ComboBoxItem>
+                                <ComboBoxItem>33- Illizi</ComboBoxItem>
+                                <ComboBoxItem>34- Bordj Bou Arreridj</ComboBoxItem>
+                                <ComboBoxItem>35- Boumerdès</ComboBoxItem>
+                                <ComboBoxItem>36- El Tarf</ComboBoxItem>
+                                <ComboBoxItem>37- Tindouf</ComboBoxItem>
+                                <ComboBoxItem>38- Tissemsilt</ComboBoxItem>
+                                <ComboBoxItem>39- El oued</ComboBoxItem>
+                                <ComboBoxItem>40- Khenchela</ComboBoxItem>
+                                <ComboBoxItem>41- Souk Ahras</ComboBoxItem>
+                                <ComboBoxItem>42- Tipaza</ComboBoxItem>
+                                <ComboBoxItem>43- Mila</ComboBoxItem>
+                                <ComboBoxItem>44- Ain Defla</ComboBoxItem>
+                                <ComboBoxItem>45- Naama</ComboBoxItem>
+                                <ComboBoxItem>46- Ain Témouchent</ComboBoxItem>
+                                <ComboBoxItem>47- Ghardaia</ComboBoxItem>
+                                <ComboBoxItem>48- Relizane</ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:Name="sex" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="100" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Sexe"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Home</ComboBoxItem>
+                                <ComboBoxItem>Femme</ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:Name="Situationfamiliale" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Situation familiale"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Célibataire</ComboBoxItem>
+                                <ComboBoxItem>Marié</ComboBoxItem>
+                            </ComboBox>
+                            <TextBox x:Name="Poste_occupee" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Poste occupé" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox"/>
+                            <TextBox x:Name="Responsable_hiearchique" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Responsable hiérarchique" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" PreviewTextInput="textvalidationTextBox"/>
+                            <DatePicker x:Name="Date_embauche" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date d'embauche" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+
+                            <TextBox x:Name="Salaire" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Salaire" materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox"  BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Projet" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Projet" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14" />
+                            <TextBox x:Name="numero_immatriculation_sociale" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Numéro d'immatriculation sociale" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <ComboBox x:Name="Statut" Margin="20 15 12 0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Statut"  BorderBrush="#89443C3C" FontSize="14">
+                                <ComboBoxItem>Actif</ComboBoxItem>
+                                <ComboBoxItem>Désactivé</ComboBoxItem>
+                                <ComboBoxItem>Retraite</ComboBoxItem>
+                            </ComboBox>
+                            <DatePicker x:Name="Date_demission" Width="200" Margin="20 15 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date de Démission" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="nbr_conge_restants" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Nombre de jours congés restants" MaxLength="3" materialDesign:HintAssist.IsFloating="True" PreviewTextInput="NumberValidationTextBox"  BorderBrush="#89443C3C" FontSize="14"/>
+
+                            <TextBox x:Name="Coordonnes_bancaires" HorizontalAlignment="Left" Margin="20 10 12 0" Width="300" materialDesign:HintAssist.Hint="Coordonnées bancaires" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <TextBox x:Name="Commentaire" HorizontalAlignment="Left" Margin="20 10 12 20" Width="700" materialDesign:HintAssist.Hint="Commentaire" materialDesign:HintAssist.IsFloating="True"   BorderBrush="#89443C3C" FontSize="14"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="cv" Width="auto" Margin="20 10 5 20" Content="Importer CV" Click="charge_cv" Style="{DynamicResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowDepth="Depth2" />
+                                <TextBlock x:Name="cv_file" Margin="10 20 5 20"> Nom du fichier</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="contrat" Width="auto" Margin="20 10 5 20" Content="Générer le contrat de travail" Click="contrat_Click" Style="{DynamicResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowDepth="Depth2" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="contrat_charger" Width="auto" Margin="20 10 5 20" Content="Générer l'attestation de travail"  Style="{DynamicResource MaterialDesignRaisedDarkButton}" materialDesign:ShadowAssist.ShadowDepth="Depth2" Click="Attestation_travaille" />
+                                
+                            </StackPanel>
+                        </StackPanel>
+                        <Button  HorizontalAlignment="Center"  materialDesign:ShadowAssist.ShadowEdges="All" materialDesign:ShadowAssist.ShadowDepth="Depth2" Click="Valider" Margin="0 20 0 40" Style="{DynamicResource MaterialDesignRaisedButton}" Content="Valider" x:Name="button2" ></Button>
+                    </StackPanel>
+
+
+                </ScrollViewer>
+            </Grid>
+            <materialDesign:DialogHost x:Name="alert" IsOpen="False" Grid.Row="1">
+                <materialDesign:DialogHost.DialogContent>
+
+                    <StackPanel Margin="15">
+                        <TextBlock x:Name="alert_text" Text="Formulaire erroné" Margin="10"/>
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " x:Name="button1"/>
+                    </StackPanel>
+                </materialDesign:DialogHost.DialogContent>
+
+            </materialDesign:DialogHost>
+        </Grid>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Authentification.Annuaire_view"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        
+       mc:Ignorable="d"
+        Title="Annuaire_view" Height="700.943" Width="1202.912" Icon="img/iconmini.png">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="630.943"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="mygrid">
+            <UserControl x:Name="view"></UserControl>
+        </Grid>
+        
+        
+        
+        <Grid Grid.Row="1" Background="#FFF0E3E3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
+
+                <materialDesign:PackIcon Kind="Image" VerticalAlignment="Center"></materialDesign:PackIcon>
+                <TextBlock VerticalAlignment="Center" Margin="5 0 5 0">View</TextBlock>
+                <ToggleButton
+                    x:Name="toogle"
+                    Click="toogle_Click"
+  Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
+  ToolTip="MaterialDesignSwitchDarkToggleButton" Height="20"
+                    VerticalAlignment="Center"
+  IsChecked="True" />
+            </StackPanel>
+           
+        </Grid>
+    </Grid>
+</Window>

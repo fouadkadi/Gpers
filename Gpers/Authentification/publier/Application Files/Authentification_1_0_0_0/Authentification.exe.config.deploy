@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="Authentification.Properties.Settings.ProjetBDDConnectionString"
+            connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\user\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1\bin\Debug\ProjetBDD.mdf&quot;;Integrated Security=True;Connect Timeout=30"
+            providerName="System.Data.SqlClient" />
+        <add name="Authentification.Properties.Settings.ProjetBDDConnectionString1"
+            connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bin\Debug\ProjetBDD.mdf;Integrated Security=True;Connect Timeout=30"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+</configuration>

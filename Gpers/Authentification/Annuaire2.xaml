@@ -1,0 +1,97 @@
+﻿<Window x:Class="Authentification.Annuaire2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             xmlns:shared="clr-namespace:Syncfusion;assembly=Syncfusion.Shared.Wpf"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"   
+             Height="630.943" Width="1202.912">
+    <Window.Resources>
+
+        <!-- Style de la première rangé "Header"
+        -->
+        <Style TargetType="{x:Type Syncfusion:GridHeaderCellControl}"  x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="Black"></Setter>
+
+        </Style>
+        <Style  TargetType="GridViewColumnHeader" x:Key="Stylus">
+            <Style.Resources>
+                <TextBlock x:Key="text" TextAlignment="Center" FontWeight="Bold"/>
+            </Style.Resources>
+        </Style>
+
+
+    </Window.Resources>
+
+
+    <Grid Height="auto" Width="1202.912" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="82" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" >
+            <StackPanel ScrollViewer.CanContentScroll="True">
+                <Button Margin="60 60 0 30" x:Name="Export" Click="Export_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <iconPacks:PackIconModern Kind="OfficeExcel" VerticalContentAlignment="Center" Height="20" Width="20" ></iconPacks:PackIconModern>
+                        <TextBlock Margin=" 10 0 0 0" VerticalAlignment="Center">Exporter vers Excel</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Syncfusion:SfDataGrid x:Name="datagrid" AllowFiltering="True" AllowSorting="True" HorizontalAlignment="Center" VerticalAlignment="Top" Height="auto" Width="auto"  HeaderStyle="{StaticResource headerStyle}" Margin="62,0,61,0" >
+                    <Syncfusion:SfDataGrid.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="/Syncfusion.SfGrid.WPF;component/Styles/Styles.xaml" />
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </Syncfusion:SfDataGrid.Resources>
+                    <Syncfusion:SfDataGrid.Columns>
+                        <Syncfusion:GridTextColumn 
+                                                   
+                                                   HeaderText="Matricule"
+                                                   MappingName="matricule"
+                                                   TextAlignment="Center" />
+                        <Syncfusion:GridTextColumn
+                                                   HeaderText="Nom"
+                                                   MappingName="nom"
+                                                   TextAlignment="Center" />
+                        <Syncfusion:GridTextColumn HeaderText="Prenom" MappingName="prenom" TextAlignment="Center" />
+                        <Syncfusion:GridTextColumn HeaderText="Numero Tel"
+                                                   MappingName="Numtel"
+                                                   TextAlignment="Center" />
+                        <Syncfusion:GridTextColumn HeaderText="E-Mail"
+                                           MappingName="Adr_mail"
+                                          TextAlignment="Center" />
+                        <Syncfusion:GridTextColumn         HeaderText="Poste"
+                                                   MappingName="poste"
+                                                   TextAlignment="Center"
+                                                   />
+                        <Syncfusion:GridTextColumn         HeaderText="Projet"
+                                                   MappingName="projet"
+                                                   TextAlignment="Center"
+                                                   />
+                    </Syncfusion:SfDataGrid.Columns>
+                </Syncfusion:SfDataGrid>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0">
+            <materialDesign:ColorZone x:Name="colzone" Padding="0 0 0 0">
+                <StackPanel Height="82" VerticalAlignment="Center" >
+                    <TextBlock FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 20 0 0" ><Run Text="Vue en Grille"/></TextBlock>
+                </StackPanel>
+
+            </materialDesign:ColorZone>
+        </Grid>
+
+
+
+    </Grid>
+</Window>

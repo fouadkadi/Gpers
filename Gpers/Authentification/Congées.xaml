@@ -1,0 +1,122 @@
+﻿<Window x:Class="Authentification.Congées"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        xmlns:sync="http://schemas.syncfusion.com/wpf"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+
+        Title="Congées" Height="700" Width="1000" Icon="img/iconmini.png">
+    <Grid>
+
+
+        <dragablz:TabablzControl BorderBrush="#FF1495D1" Width="auto" Height="auto" x:Name="dragmenu" BorderThickness="1,1,1,0"   >
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem  FontSize="14" Width="500" >
+                <TabItem.Header>
+                    <Grid Width="500" >
+                        <TextBlock FontSize="16" Foreground="White" FontFamily="Open Sans" >Planning</TextBlock>
+                    </Grid>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid  Grid.Row="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <materialDesign:ColorZone x:Name="dono" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal" Width="15" Height="60"  ></StackPanel>
+                                </materialDesign:ColorZone>
+                                <TextBlock HorizontalAlignment="Center"  Margin="80 0 0 0" VerticalAlignment="Center" FontSize="60" FontFamily="Roboto Light" > Plan des congés</TextBlock>
+
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Grid>
+                    <Grid  Grid.Row="2">
+                        <StackPanel>
+
+                            <StackPanel Margin="20 0 20 0" Height="300">
+
+
+
+
+                                <Button FontSize="50" x:Name="vis" Padding="10 10 10 10 " Height="100" HorizontalAlignment="Center" Margin="120" Width="300" materialDesign:ShadowAssist.ShadowDepth="Depth3" Click="Visulisé_gantt">Visualiser</Button>
+
+
+
+
+
+
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="300 40 0 0 " >
+                                <ComboBox  x:Name="Filtre" materialDesign:HintAssist.Hint="Type du Filtre" Width="200" materialDesign:HintAssist.IsFloating="True" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" BorderBrush="#89443C3C" DropDownClosed="Filtre_actif"  >
+                                    <ComboBoxItem >Employé</ComboBoxItem>
+                                    <ComboBoxItem>Mois</ComboBoxItem>
+                                    <ComboBoxItem>Année</ComboBoxItem>
+
+                                </ComboBox>
+                                <ComboBox x:Name="choixfiltre" Margin="20" materialDesign:HintAssist.Hint="Choix du filtre" Width="200" materialDesign:HintAssist.IsFloating="True" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" BorderBrush="#89443C3C"  DropDownClosed="Filtre_actif2" ></ComboBox>
+                                <Button Content="Annuler le filtrage" x:Name="but" HorizontalAlignment="Center" Margin="0 10 0 0 " Click="annule_filtre"></Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem  Width="500"  >
+                <TabItem.Header>
+                    <Grid Width="450" >
+                        <TextBlock FontSize="16" Foreground="White" FontFamily="Open Sans" >Demande de congé</TextBlock>
+                    </Grid>
+                </TabItem.Header>
+                <StackPanel Margin="300 80 0 0 ">
+
+                    <ComboBox  x:Name="Employée" HorizontalAlignment="Left" Margin="20 15 12 0" materialDesign:HintAssist.Hint="Employé" Width="300" materialDesign:HintAssist.IsFloating="True" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" BorderBrush="#89443C3C"  FontSize="14" ></ComboBox>
+                    <DatePicker x:Name="date_début" Width="200" Margin="20 20 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date Début" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                    <DatePicker x:Name="date_fin" Width="200" Margin="20 20 12 0" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Date Fin" materialDesign:HintAssist.IsFloating="True" BorderBrush="#89443C3C" FontSize="14"/>
+                    <ComboBox x:Name="Type_congé" HorizontalAlignment="Left" Margin="20 20 12 0" materialDesign:HintAssist.Hint="Type du congé" Width="300" materialDesign:HintAssist.IsFloating="True" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" BorderBrush="#89443C3C" FontSize="14" >
+                        <ComboBoxItem>Annuel</ComboBoxItem>
+                        <ComboBoxItem>Maladie</ComboBoxItem>
+
+                        <ComboBoxItem>Sans solde</ComboBoxItem>
+
+                    </ComboBox>
+                    <Button x:Name="formulaire" Click="formulaire_Click" Content="Charger le formulaire de demande de Congé" Margin="20 30 12 0" HorizontalAlignment="Left" materialDesign:ShadowAssist.ShadowDepth="Depth2" Background="#FF3586C7"/>
+                    <TextBox x:Name="formulaire_name" IsEnabled="False" BorderThickness="0,0,0,2" BorderBrush="#FF706262" Width="auto"  TextAlignment="Center" Margin="20 15 12 0" HorizontalAlignment="Left" >Nom du ficher</TextBox>
+                    <Button x:Name="validé" Content="Ajouter" Width="100" Margin="120 80 12 0" HorizontalAlignment="Left" materialDesign:ShadowAssist.ShadowDepth="Depth2" Click="submit_Click"/>
+                </StackPanel>
+
+            </TabItem>
+
+
+
+
+        </dragablz:TabablzControl>
+
+        <materialDesign:DialogHost x:Name="alert" IsOpen="False" >
+            <materialDesign:DialogHost.DialogContent>
+
+                <StackPanel Margin="15">
+                    <TextBlock x:Name="alert_text" Text=" Bien conneceté " Margin="10"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"  Style="{DynamicResource MaterialDesignRaisedLightButton}" Content=" OK " Background="#FF2ECC71"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+
+        </materialDesign:DialogHost>
+
+    </Grid>
+</Window>

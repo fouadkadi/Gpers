@@ -1,0 +1,61 @@
+
+
+Date:2018-04-16 19:50:02,717
+Thread:[1]
+Level:ERROR
+Logger:SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM                         [(null)]
+Message:System.IndexOutOfRangeException: L'index se trouve en dehors des limites du tableau.
+   à SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM.set_SelectedPlatformName(String value)
+   à SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM.SetSupportedPlatformsVisibility(String selectedVersion)
+
+
+Date:2018-04-16 20:04:36,879
+Thread:[1]
+Level:ERROR
+Logger:Microsoft.Syncfusion_VSExtension_Troubleshooter.Syncfusion_VSExtension_TroubleshooterPackage                         [(null)]
+Message:System.Windows.Markup.XamlParseException: La valeur fournie sur 'System.Windows.StaticResourceExtension' a levé une exception. ---> System.TypeInitializationException: Une exception a été levée par l'initialiseur de type pour 'Syncfusion.Windows.Tools.Controls.TreeViewItemAdv'. ---> System.Resources.MissingManifestResourceException: Impossible de trouver des ressources appropriées pour la culture spécifiée ou la culture neutre. Assurez-vous que "Syncfusion.Windows.Tools.Controls.Resources.Syncfusion.Tools.Wpf.en-US.resources" a été correctement incorporé ou lié dans l'assembly "Syncfusion.Tools.Wpf" au moment de la compilation ou que tous les assemblys satellites requis sont chargeables et complètement signés.
+   à System.Resources.ManifestBasedResourceGroveler.HandleResourceStreamMissing(String fileName)
+   à System.Resources.ManifestBasedResourceGroveler.GrovelForResourceSet(CultureInfo culture, Dictionary`2 localResourceSets, Boolean tryParents, Boolean createIfNotExists, StackCrawlMark& stackMark)
+   à System.Resources.ResourceManager.InternalGetResourceSet(CultureInfo requestedCulture, Boolean createIfNotExists, Boolean tryParents, StackCrawlMark& stackMark)
+   à System.Resources.ResourceManager.InternalGetResourceSet(CultureInfo culture, Boolean createIfNotExists, Boolean tryParents)
+   à System.Resources.ResourceManager.GetString(String name, CultureInfo culture)
+   à System.Resources.ResourceManager.GetString(String name)
+   à Syncfusion.Windows.Tools.Controls.Resources.SR.GetString(CultureInfo culture, String name)
+   à Syncfusion.Windows.Tools.Controls.Resources.ResourceWrapper..ctor()
+   à Syncfusion.Windows.Tools.Controls.TreeViewItemAdv..cctor()
+   --- Fin de la trace de la pile d'exception interne ---
+   à System.Runtime.CompilerServices.RuntimeHelpers._RunClassConstructor(RuntimeType type)
+   à System.Windows.DependencyProperty.FromName(String name, Type ownerType)
+   à System.Windows.Baml2006.Baml2006Reader.WriteTypeConvertedInstance(Int16 converterId, Int32 dataByteSize)
+   à System.Windows.Baml2006.Baml2006Reader.Process_PropertyCustom()
+   à System.Windows.Baml2006.Baml2006Reader.Process_OneBamlRecord()
+   à System.Windows.Baml2006.Baml2006Reader.ReadObject(KeyRecord record)
+   à System.Windows.ResourceDictionary.CreateObject(KeyRecord key)
+   à System.Windows.ResourceDictionary.OnGettingValue(Object key, Object& value, Boolean& canCache)
+   à System.Windows.ResourceDictionary.OnGettingValuePrivate(Object key, Object& value, Boolean& canCache)
+   à System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   à System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   à System.Windows.ResourceDictionary.GetValueWithoutLock(Object key, Boolean& canCache)
+   à System.Windows.ResourceDictionary.GetValue(Object key, Boolean& canCache)
+   à System.Windows.StaticResourceExtension.FindResourceInEnviroment(IServiceProvider serviceProvider, Boolean allowDeferredReference, Boolean mustReturnDeferredResourceReference)
+   à System.Windows.StaticResourceExtension.TryProvideValueInternal(IServiceProvider serviceProvider, Boolean allowDeferredReference, Boolean mustReturnDeferredResourceReference)
+   à System.Windows.StaticResourceExtension.ProvideValueInternal(IServiceProvider serviceProvider, Boolean allowDeferredReference)
+   à System.Windows.StaticResourceExtension.ProvideValue(IServiceProvider serviceProvider)
+   à MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+   --- Fin de la trace de la pile d'exception interne ---
+   à System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   à System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   à System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   à System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   à SyncfusionInc.Syncfusion_VSExtension_Troubleshooter.View.SyncfusionTroubleshooterWindow.InitializeComponent()
+   à SyncfusionInc.Syncfusion_VSExtension_Troubleshooter.View.SyncfusionTroubleshooterWindow..ctor(Project project, String projectGuid)
+   à Microsoft.Syncfusion_VSExtension_Troubleshooter.Syncfusion_VSExtension_TroubleshooterPackage.MenuItemCallback(Object sender, EventArgs e)
+
+
+Date:2018-04-16 20:04:41,684
+Thread:[1]
+Level:ERROR
+Logger:SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM                         [(null)]
+Message:System.IndexOutOfRangeException: L'index se trouve en dehors des limites du tableau.
+   à SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM.set_SelectedPlatformName(String value)
+   à SyncfusionAssemblyReferenceUI.SyncfusionAssemblyReferenceVM.SetSupportedPlatformsVisibility(String selectedVersion)

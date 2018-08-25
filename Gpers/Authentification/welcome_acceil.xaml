@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Authentification.welcome_acceil"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="385" d:DesignWidth="775">
+
+    <Grid x:Name="g" Margin="0,0,0,-110">
+        <Image x:Name="logo" Margin="225,35,450,360" Width="100" Height="100"  Source="img/iconmini.png" />
+        <TextBlock  FontSize="30"  Height="100" Margin="325,60,132,335" TextWrapping="Wrap" Text="Raison Sociale" x:Name="raison"  Width="318"/>
+        <TextBlock x:Name="textBlock1" FontSize="45" HorizontalAlignment="Center"  Height="95" Margin="0,140,0,260" TextWrapping="Wrap" Text="Bienvenue"  Width="217"/>
+        <materialDesign:Badged Margin="470,413,0,0" Width="180" x:Name="badgedentretien" >
+            <Button Width="180" Click="Button_Click">
+                Entretiens non effectués
+            </Button>
+        </materialDesign:Badged>
+        <materialDesign:Badged Margin="120,413,0,0" Width="160" Badge="0"  x:Name="badgeobjectif">
+            <Button Click="Button_Click_1">
+                Objectifs non evalués
+            </Button>
+        </materialDesign:Badged>
+    </Grid>
+</UserControl>

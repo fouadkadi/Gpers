@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Authentification.personel_tiles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Authentification"
+             mc:Ignorable="d" 
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      
+                     
+                     
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      
+                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="LargeTileStyle" TargetType="Controls:Tile">
+                <Setter Property="Height" Value="125" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="TitleFontSize" Value="14" />
+                <Setter Property="Width" Value="300" />
+            </Style>
+
+            <Style x:Key="SmallTileStyle" TargetType="Controls:Tile">
+                <Setter Property="Height" Value="125" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="TitleFontSize" Value="10" />
+                <Setter Property="Width" Value="147" />
+            </Style>
+
+
+
+        </ResourceDictionary>
+
+
+    </UserControl.Resources>
+
+
+    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+        <Grid Background="Transparent" Width="865" Height="540">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="430*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="83*" />
+                <RowDefinition Height="259*" />
+            </Grid.RowDefinitions>
+
+            <WrapPanel
+                       Width="775"
+                       Height="385"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top" Margin="60,50,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <Controls:Tile Title="Ajouter un employé"
+                               Margin="3"
+                               Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"
+                               Background="Teal"
+                               HorizontalTitleAlignment="Right"
+                               Style="{StaticResource LargeTileStyle}" Height="181" Width="375" Click="ajouter_employée">
+                    <iconPacks:PackIconModern Width="40"
+                                              Height="40"
+                                              Kind="Add" />
+                </Controls:Tile>
+                <Controls:Tile Title="Modification"
+                               Click="modif_click"
+                               Background="Green"
+                               HorizontalTitleAlignment="Left"
+                               Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"
+                    
+                               Style="{StaticResource LargeTileStyle}" Height="182" Width="375">
+                    <iconPacks:PackIconFontAwesome Width="40"
+                                                   Height="40"
+                                                   Kind="FileAltRegular" />
+                </Controls:Tile>
+                <Controls:Tile Title="contrat de travail et attestation de travail"
+                               Click="Document_click"
+                               Margin="3"
+                               HorizontalTitleAlignment="Center"
+                               Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"
+                               Style="{StaticResource LargeTileStyle}" Height="181" Width="757">
+                    <iconPacks:FontAwesome Width="40"
+                                              Height="40"
+                                              Kind="FileArchiveRegular" />
+                </Controls:Tile>
+
+            </WrapPanel>
+        </Grid>
+    </ScrollViewer>
+
+</UserControl>

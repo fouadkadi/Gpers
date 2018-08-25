@@ -1,0 +1,24 @@
+﻿<Window x:Class="Authentification.Logsalaire"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authentification"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:Syncfusion="http://schemas.syncfusion.com/wpf" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1170">
+    <Grid>
+
+        <materialDesign:ColorZone x:Name="colzone">
+            <StackPanel>
+                <TextBlock FontSize="35" HorizontalAlignment="Center" Margin="10"> Historique des salaires</TextBlock>
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <Syncfusion:SfDataGrid x:Name="gridsalaire" AllowFiltering="True" HorizontalAlignment="Center" Height="auto"  VerticalAlignment="Center" Width="auto"></Syncfusion:SfDataGrid>
+
+
+
+    </Grid>
+</Window>
